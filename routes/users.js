@@ -7,7 +7,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res,next){
-  req.query('');
+  req.query(' ');
+  		//服务端通过req的body接收ajax的post数据
+      var data = req.body;
+      var userID = data.userID;
+      var oldPassword = loginUser.password;
+      //通过res的json方法向客户端发送一个 JSON 格式的响应
+          res.json({status:'success'});
 });
 
 module.exports = router;
